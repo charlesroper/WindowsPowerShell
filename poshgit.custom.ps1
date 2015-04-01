@@ -15,7 +15,7 @@ function global:prompt {
     # Reset color, which can be messed up by Enable-GitColors
     $Host.UI.RawUI.ForegroundColor = $GitPromptSettings.DefaultForegroundColor
 
-    write-host ([net.dns]::GetHostName()) -NoNewline -ForegroundColor Green
+    write-host ([Environment]::UserName + '@' + [Environment]::MachineName) -NoNewline -ForegroundColor Green
     write-host (' ' + $pwd.Path.Replace($env:Home, '~')) -NoNewline -ForegroundColor DarkCyan
     Write-VcsStatus
 
