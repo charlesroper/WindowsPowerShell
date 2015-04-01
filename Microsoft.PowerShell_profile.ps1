@@ -5,16 +5,7 @@ $env:Path += ";$(Split-Path $profile)\Scripts"
 # https://rkeithhill.wordpress.com/2013/10/18/psreadline-a-better-line-editing-experience-for-the-powershell-console/
 If($host.Name -eq 'ConsoleHost') {import-module PSReadline}
 
-# Load posh-git example profile
-. 'C:\Tools\poshgit\dahlbyk-posh-git-869d4c5\profile.example.ps1'
-
-# Improved prompt
-# http://ss64.com/ps/syntax-prompt.html
-function prompt {
-'PS ' + ($pwd -split '\\')[0]+' '+$(($pwd -split '\\')[-1] -join '\') + '> '
-}
-
-# cd - 
+# cd -
 # Alias for going back to previous directory
 # http://windows-powershell-scripts.blogspot.co.uk/2009/07/cd-change-to-previous-working-directory.html
 function cddash {
@@ -132,3 +123,7 @@ Remove-Item alias:dir
 Remove-Item alias:ls
 Set-Alias dir Get-DirWithSize
 Set-Alias ls Get-DirWithSize
+
+# Load posh-git custom profile
+. 'C:\Users\Charles\Documents\WindowsPowerShell\poshgit.custom.ps1'
+
