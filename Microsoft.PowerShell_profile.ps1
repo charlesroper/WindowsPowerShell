@@ -1,6 +1,12 @@
 ﻿# Load Scripts
 $env:Path += ";$(Split-Path $profile)\Scripts"
 
+function Get-Path {
+  param ($cmd)
+  Get-Command $cmd | Select Path
+}
+Set-Alias which Get-Path
+
 # Load PSReadline
 # https://rkeithhill.wordpress.com/2013/10/18/psreadline-a-better-line-editing-experience-for-the-powershell-console/
 If($host.Name -eq 'ConsoleHost') {import-module PSReadline}
