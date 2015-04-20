@@ -1,6 +1,7 @@
 ﻿# Load Scripts
 $env:Path += ";$(Split-Path $profile)\Scripts"
 
+# Setup a Which alias
 function Get-Path {
   param ($cmd)
   Get-Command $cmd | Select Path
