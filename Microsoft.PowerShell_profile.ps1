@@ -132,5 +132,7 @@ Set-Alias dir Get-DirWithSize
 Set-Alias ls Get-DirWithSize
 
 # Load posh-git custom profile
-. 'C:\Users\Charles\Documents\WindowsPowerShell\poshgit.custom.ps1'
+$docs = [environment]::getfolderpath("mydocuments") 
+. (Join-Path -Path $docs -ChildPath 'WindowsPowerShell\poshgit.custom.ps1')
+#. 'C:\Users\charlesr\Documents\WindowsPowerShell\poshgit.custom.ps1'
 
