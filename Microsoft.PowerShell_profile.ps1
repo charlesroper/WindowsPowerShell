@@ -4,13 +4,13 @@ $env:Path += ";$(Split-Path $profile)\Scripts"
 # Setup a Which alias
 function Get-Path {
   param ($cmd)
-  Get-Command $cmd | Select Path
+  Get-Command -Name $cmd | Select-Object Path
 }
 Set-Alias which Get-Path
 
 # Load PSReadline
 # https://rkeithhill.wordpress.com/2013/10/18/psreadline-a-better-line-editing-experience-for-the-powershell-console/
-If($host.Name -eq 'ConsoleHost') {import-module PSReadline}
+If($host.Name -eq 'ConsoleHost') {Import-Module -Name PSReadline}
 
 # cd -
 # Alias for going back to previous directory
@@ -23,7 +23,7 @@ function cddash {
         $pwd=$args[0];
     }
 
-    $tmp=pwd;
+    $tmp=Get-Location;
 
     if ($pwd) {
         Set-Location $pwd;
@@ -32,7 +32,7 @@ function cddash {
     Set-Variable -Name OLDPWD -Value $tmp -Scope global;
 }
 
-set-alias -Name cd -value cddash -Option AllScope
+Set-Alias -Name cd -Value cddash -Option AllScope
 
 # Coloured directory listings
 # http://avinmathew.com/coloured-directory-listings-in-powershell/
@@ -48,9 +48,9 @@ New-CommandWrapper Out-Default -Process {
     if(-not ($notfirst))
     {
       Write-Host "`n    Directory: " -noNewLine
-      Write-Host "$(pwd)`n" -foregroundcolor "Cyan"
-      Write-Host "Mode        Last Write Time       Length   Name"
-      Write-Host "----        ---------------       ------   ----"
+      Write-Host "$(Get-Location)`n" -foregroundcolor "Cyan"
+      Write-Host "Mode     Last Write     Time       Length   Name"
+      Write-Host "------   -------------------       ------   ----"
       $notfirst=$true
     }
 
@@ -132,7 +132,7 @@ Set-Alias dir Get-DirWithSize
 Set-Alias ls Get-DirWithSize
 
 # Load posh-git custom profile
-$docs = [environment]::getfolderpath("mydocuments") 
+$docs = [System.Environment]::GetFolderPath("mydocuments") 
 . (Join-Path -Path $docs -ChildPath 'WindowsPowerShell\poshgit.custom.ps1')
 #. 'C:\Users\charlesr\Documents\WindowsPowerShell\poshgit.custom.ps1'
 
