@@ -1,4 +1,8 @@
-﻿# Load Scripts
+﻿# Git related aliases; see http://stackoverflow.com/a/24368751/1944
+Set-Alias ssh-agent "$env:ProgramFiles\git\usr\bin\ssh-agent.exe"
+Set-Alias ssh-add "$env:ProgramFiles\git\usr\bin\ssh-add.exe"
+
+# Load Scripts
 $env:Path += ";$(Split-Path $profile)\Scripts"
 
 # Setup a Which alias
@@ -132,7 +136,18 @@ Set-Alias dir Get-DirWithSize
 Set-Alias ls Get-DirWithSize
 
 # Load posh-git custom profile
-$docs = [System.Environment]::GetFolderPath("mydocuments") 
+$docs = [System.Environment]::GetFolderPath("mydocuments")
 . (Join-Path -Path $docs -ChildPath 'WindowsPowerShell\poshgit.custom.ps1')
 #. 'C:\Users\charlesr\Documents\WindowsPowerShell\poshgit.custom.ps1'
 
+
+# Chocolatey profile
+$ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
+if (Test-Path($ChocolateyProfile)) {
+  Import-Module "$ChocolateyProfile"
+}
+
+# Get External IP function
+function Get-ExternalIP {
+  (Invoke-WebRequest icanhazip.com).Content
+}

@@ -22,10 +22,8 @@ function global:prompt {
     $global:LASTEXITCODE = $realLASTEXITCODE
     Write-Host ("`nPS") -NoNewline -ForegroundColor Cyan
     return " > "
-    
-}
 
-Enable-GitColors
+}
 
 Pop-Location
 
