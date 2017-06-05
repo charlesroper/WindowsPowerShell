@@ -1,29 +1,26 @@
 Push-Location (Split-Path -Path $MyInvocation.MyCommand.Definition -Parent)
 
-# Load posh-git module from current directory
-# Import-Module .\posh-git
-
-# If module is installed in a default location ($env:PSModulePath),
-# use this instead (see about_Modules for more information):
-Import-Module posh-git
-
-
 # Set up a prompt, adding the git prompt parts inside git repos
-function global:prompt {
-    $realLASTEXITCODE = $LASTEXITCODE
-
-    # Reset color, which can be messed up by Enable-GitColors
-    $Host.UI.RawUI.ForegroundColor = $GitPromptSettings.DefaultForegroundColor
+function prompt {
+    $originalLastExitCode = $LASTEXITCODE
 
     write-host ([Environment]::UserName + '@' + [Environment]::MachineName) -NoNewline -ForegroundColor Green
-    write-host (' ' + $pwd.Path.Replace($env:Home, '~')) -NoNewline -ForegroundColor DarkCyan
+    $maxPathLength = 40
+    $curPath = $ExecutionContext.SessionState.Path.CurrentLocation.Path.Replace($env:Home, '~')
+    if ($curPath.Length -gt $maxPathLength) {
+        $curPath = '...' + $curPath.SubString($curPath.Length - $maxPathLength + 3)
+    }
+    Write-Host (' ' + $curPath) -NoNewline -ForegroundColor DarkCyan
     Write-VcsStatus
 
-    $global:LASTEXITCODE = $realLASTEXITCODE
+    $global:LASTEXITCODE = $originalLastExitCode
+
     Write-Host ("`nPS") -NoNewline -ForegroundColor Cyan
     return " > "
-
 }
+
+# Look for modules on $env:PSModulePath)
+Import-Module posh-git
 
 Pop-Location
 
