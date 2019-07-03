@@ -23,5 +23,3 @@ function prompt {
 Import-Module posh-git
 
 Pop-Location
-
-Start-SshAgent -Quiet

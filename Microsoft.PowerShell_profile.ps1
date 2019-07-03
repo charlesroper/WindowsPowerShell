@@ -1,4 +1,4 @@
-﻿# Git related aliases; see http://stackoverflow.com/a/24368751/1944
+# Git related aliases; see http://stackoverflow.com/a/24368751/1944
 Set-Alias ssh-agent "$env:ProgramFiles\git\usr\bin\ssh-agent.exe"
 Set-Alias ssh-add "$env:ProgramFiles\git\usr\bin\ssh-add.exe"
 
