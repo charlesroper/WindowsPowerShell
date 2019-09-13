@@ -33,7 +33,8 @@ function Write-Theme {
     }
 
     $timeStamp = Get-Date -Format T
-    $clock = [char]::ConvertFromUtf32(0x25F7)
+    # $clock = [char]::ConvertFromUtf32(0x221E)
+    $clock = ''
     $timestamp = "$clock $timeStamp"
 
     if ($status) {
