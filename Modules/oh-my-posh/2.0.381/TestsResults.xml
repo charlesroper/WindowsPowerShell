@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<test-results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="nunit_schema_2.5.xsd" name="Pester" total="41" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2020-02-04" time="17:52:32">
+  <environment machine-name="APPVEYOR-VM" nunit-version="2.5.8.0" cwd="C:\projects\oh-my-posh" os-version="10.0.17763" user-domain="APPVEYOR-VM" clr-version="Unknown" user="appveyor" platform="Microsoft Windows Server 2019 Datacenter|C:\Windows|\Device\Harddisk0\Partition4" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite type="TestFixture" name="Pester" executed="True" result="Success" success="True" time="5.7518" asserts="0" description="Pester">
+    <results>
+      <test-suite type="TestFixture" name="C:\projects\oh-my-posh\Helpers\PoshGit.Tests.ps1" executed="True" result="Success" success="True" time="0.9703" asserts="0" description="C:\projects\oh-my-posh\Helpers\PoshGit.Tests.ps1">
+        <results>
+          <test-suite type="TestFixture" name="Test-GetBranchSymbol" executed="True" result="Success" success="True" time="0.8949" asserts="0" description="Test-GetBranchSymbol">
+            <results>
+              <test-suite type="TestFixture" name="Is disabled" executed="True" result="Success" success="True" time="0.4762" asserts="0" description="Is disabled">
+                <results>
+                  <test-case description="Has Enabled set to False" name="Test-GetBranchSymbol.Is disabled.Has Enabled set to False" time="0.1968" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="Has has no upstream" name="Test-GetBranchSymbol.Is disabled.Has has no upstream" time="0.0058" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="Is enabled" executed="True" result="Success" success="True" time="0.289" asserts="0" description="Is enabled">
+                <results>
+                  <test-case description="Uses GitHub" name="Test-GetBranchSymbol.Is enabled.Uses GitHub" time="0.1022" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="Uses GitLab" name="Test-GetBranchSymbol.Is enabled.Uses GitLab" time="0.0251" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="Uses BitBucket" name="Test-GetBranchSymbol.Is enabled.Uses BitBucket" time="0.0217" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="Uses something else" name="Test-GetBranchSymbol.Is enabled.Uses something else" time="0.0219" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="Has no remote" name="Test-GetBranchSymbol.Is enabled.Has no remote" time="0.0063" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+      <test-suite type="TestFixture" name="C:\projects\oh-my-posh\Helpers\Prompt.Tests.ps1" executed="True" result="Success" success="True" time="4.7815" asserts="0" description="C:\projects\oh-my-posh\Helpers\Prompt.Tests.ps1">
+        <results>
+          <test-suite type="TestFixture" name="Test-IsVanillaWindow" executed="True" result="Success" success="True" time="0.5624" asserts="0" description="Test-IsVanillaWindow">
+            <results>
+              <test-suite type="TestFixture" name="Running in a non-vanilla window" executed="True" result="Success" success="True" time="0.4178" asserts="0" description="Running in a non-vanilla window">
+                <results>
+                  <test-case description="runs in ConEmu and outputs 'false'" name="Test-IsVanillaWindow.Running in a non-vanilla window.runs in ConEmu and outputs 'false'" time="0.0423" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="runs in ConEmu and outputs 'false'" name="Test-IsVanillaWindow.Running in a non-vanilla window.runs in ConEmu and outputs 'false'" time="0.0223" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="runs in an ANSI supported terminal and outputs 'false'" name="Test-IsVanillaWindow.Running in a non-vanilla window.runs in an ANSI supported terminal and outputs 'false'" time="0.03" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="runs in ConEmu and outputs 'false'" name="Test-IsVanillaWindow.Running in a non-vanilla window.runs in ConEmu and outputs 'false'" time="0.0123" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="runs in cmder and outputs 'false'" name="Test-IsVanillaWindow.Running in a non-vanilla window.runs in cmder and outputs 'false'" time="0.0296" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="runs in cmder and conemu and outputs 'false'" name="Test-IsVanillaWindow.Running in a non-vanilla window.runs in cmder and conemu and outputs 'false'" time="0.0264" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="runs in Hyper.js and outputs 'false'" name="Test-IsVanillaWindow.Running in a non-vanilla window.runs in Hyper.js and outputs 'false'" time="0.0217" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="runs in vscode and outputs 'false'" name="Test-IsVanillaWindow.Running in a non-vanilla window.runs in vscode and outputs 'false'" time="0.0257" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="Running in a vanilla window" executed="True" result="Success" success="True" time="0.0926" asserts="0" description="Running in a vanilla window">
+                <results>
+                  <test-case description="runs in a vanilla window and outputs 'true'" name="Test-IsVanillaWindow.Running in a vanilla window.runs in a vanilla window and outputs 'true'" time="0.0259" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="Get-Home" executed="True" result="Success" success="True" time="0.084" asserts="0" description="Get-Home">
+            <results>
+              <test-case description="returns C:\Users\appveyor" name="Get-Home.returns C:\Users\appveyor" time="0.0083" asserts="0" success="True" result="Success" executed="True" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="Get-Provider" executed="True" result="Success" success="True" time="0.0815" asserts="0" description="Get-Provider">
+            <results>
+              <test-case description="uses the provider 'AwesomeSauce'" name="Get-Provider.uses the provider 'AwesomeSauce'" time="0.0232" asserts="0" success="True" result="Success" executed="True" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="Get-FormattedRootLocation" executed="True" result="Success" success="True" time="0.3258" asserts="0" description="Get-FormattedRootLocation">
+            <results>
+              <test-suite type="TestFixture" name="Running in the FileSystem" executed="True" result="Success" success="True" time="0.2098" asserts="0" description="Running in the FileSystem">
+                <results>
+                  <test-case description="is in the C:\Users\appveyor folder" name="Get-FormattedRootLocation.Running in the FileSystem.is in the C:\Users\appveyor folder" time="0.0195" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="is somewhere in the C:\Users\appveyor folder" name="Get-FormattedRootLocation.Running in the FileSystem.is somewhere in the C:\Users\appveyor folder" time="0.0171" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="is in 'Microsoft.PowerShell.Core\FileSystem::\\Test\Hello' with Drive X:" name="Get-FormattedRootLocation.Running in the FileSystem.is in 'Microsoft.PowerShell.Core\FileSystem::\\Test\Hello' with Drive X:" time="0.0141" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="is in C:" name="Get-FormattedRootLocation.Running in the FileSystem.is in C:" time="0.0182" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="is has no drive" name="Get-FormattedRootLocation.Running in the FileSystem.is has no drive" time="0.0155" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="is has no valid path" name="Get-FormattedRootLocation.Running in the FileSystem.is has no valid path" time="0.005" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="Running outside of the FileSystem" executed="True" result="Success" success="True" time="0.0742" asserts="0" description="Running outside of the FileSystem">
+                <results>
+                  <test-case description="running outside of the Filesystem in L:" name="Get-FormattedRootLocation.Running outside of the FileSystem.running outside of the Filesystem in L:" time="0.0121" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="Get-FullPath" executed="True" result="Success" success="True" time="0.1437" asserts="0" description="Get-FullPath">
+            <results>
+              <test-suite type="TestFixture" name="Running in the FileSystem" executed="True" result="Success" success="True" time="0.108" asserts="0" description="Running in the FileSystem">
+                <results>
+                  <test-case description="is in the C:\Users\appveyor folder" name="Get-FullPath.Running in the FileSystem.is in the C:\Users\appveyor folder" time="0.0205" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="is somewhere in the C:\Users\appveyor folder" name="Get-FullPath.Running in the FileSystem.is somewhere in the C:\Users\appveyor folder" time="0.0139" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="Get-ShortPath" executed="True" result="Success" success="True" time="2.854" asserts="0" description="Get-ShortPath">
+            <results>
+              <test-suite type="TestFixture" name="Running in the FileSystem on Windows" executed="True" result="Success" success="True" time="2.8174" asserts="0" description="Running in the FileSystem on Windows">
+                <results>
+                  <test-case description="is in a root folder" name="Get-ShortPath.Running in the FileSystem on Windows.is in a root folder" time="0.0767" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="is outside the C:\Users\appveyor folder" name="Get-ShortPath.Running in the FileSystem on Windows.is outside the C:\Users\appveyor folder" time="0.1251" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="is in the C:\Users\appveyor folder" name="Get-ShortPath.Running in the FileSystem on Windows.is in the C:\Users\appveyor folder" time="0.0346" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="is somewhere in the C:\Users\appveyor folder" name="Get-ShortPath.Running in the FileSystem on Windows.is somewhere in the C:\Users\appveyor folder" time="0.0773" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="is in 'Microsoft.PowerShell.Core\FileSystem::\\Test\Hello'" name="Get-ShortPath.Running in the FileSystem on Windows.is in 'Microsoft.PowerShell.Core\FileSystem::\\Test\Hello'" time="2.3644" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="Test-NotDefaultUser" executed="True" result="Success" success="True" time="0.6488" asserts="0" description="Test-NotDefaultUser">
+            <results>
+              <test-suite type="TestFixture" name="With default user set" executed="True" result="Success" success="True" time="0.4976" asserts="0" description="With default user set">
+                <results>
+                  <test-case description="same username gives 'false'" name="Test-NotDefaultUser.With default user set.same username gives 'false'" time="0.0086" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="different username gives 'false'" name="Test-NotDefaultUser.With default user set.different username gives 'false'" time="0.0073" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="same username and outside VirtualEnv gives 'false'" name="Test-NotDefaultUser.With default user set.same username and outside VirtualEnv gives 'false'" time="0.0184" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="same username and inside VirtualEnv same default user gives 'false'" name="Test-NotDefaultUser.With default user set.same username and inside VirtualEnv same default user gives 'false'" time="0.0197" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="different username and inside VirtualEnv same default user gives 'true'" name="Test-NotDefaultUser.With default user set.different username and inside VirtualEnv same default user gives 'true'" time="0.0136" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="With no default user set" executed="True" result="Success" success="True" time="0.0997" asserts="0" description="With no default user set">
+                <results>
+                  <test-case description="no username gives 'true'" name="Test-NotDefaultUser.With no default user set.no username gives 'true'" time="0.0078" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="different username gives 'true'" name="Test-NotDefaultUser.With no default user set.different username gives 'true'" time="0.0087" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="different username and outside VirtualEnv gives 'true'" name="Test-NotDefaultUser.With no default user set.different username and outside VirtualEnv gives 'true'" time="0.011" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="no username and inside VirtualEnv gives 'true'" name="Test-NotDefaultUser.With no default user set.no username and inside VirtualEnv gives 'true'" time="0.0078" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>
